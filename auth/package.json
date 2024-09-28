@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.ts",
-    "start": "nodemon dist/index.js",
+    "dev": "nodemon --config nodemon.json", 
     "build": "tsc --watch",
-    "start:dev": "concurrently --kill-others-on-fail \"npm run build\" \"npm run start\""
+    "start": "node dist/index.js",
+    "start:dev": "concurrently --kill-others-on-fail \"npm run build\" \"npm run dev\""
   },
   "author": "javed",
   "license": "ISC",
