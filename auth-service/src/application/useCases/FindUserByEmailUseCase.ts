@@ -1,4 +1,4 @@
-import { IDependencies } from "../../application/interfaces/IDependencies";
+import { IDependencies } from "../interfaces/IDependencies";
 import { UserEntity } from "../../domain/entities";
 
 export const findUserByEmailUseCase = (dependencies: IDependencies) => {

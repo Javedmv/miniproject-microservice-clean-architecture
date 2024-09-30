@@ -3,6 +3,7 @@ import { User } from "../models/loginCredential";
 
 async function findByEmail(email: string): Promise<UserEntity | null>{
     try {
+        
         const user = await User.findOne({email})
         return user;
     } catch (error) {

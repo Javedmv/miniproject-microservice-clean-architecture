@@ -3,6 +3,7 @@ import { UserEntity } from "../../../../domain/entities";
 
 export const signup = async (data: UserEntity) : Promise <UserEntity | null> => {
     try {
+        
         console.log(data)
         const nwUser = await User.create(data)
         console.log("nwUser created");

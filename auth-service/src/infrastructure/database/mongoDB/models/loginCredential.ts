@@ -2,6 +2,7 @@ import { Schema, model, Document } from "mongoose";
 import { UserEntity } from "../../../../domain/entities";
 import mongoose from "mongoose";
 
+
 const userSchema = new Schema({
     username: {
         type: String,

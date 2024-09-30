@@ -2,6 +2,7 @@ import { UserEntity } from "../../domain/entities";
 import { IDependencies } from "../interfaces/IDependencies";
 
 export const signupUserUseCase = (dependencies: IDependencies) => {
+    
     const {repositories: {signup}} = dependencies;
     return {
         execute: async (data: UserEntity) => {

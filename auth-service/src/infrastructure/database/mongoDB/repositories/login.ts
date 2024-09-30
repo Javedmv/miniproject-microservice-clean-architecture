@@ -5,6 +5,7 @@ import bcrypt from 'bcrypt';
 
 export const login = async(data: UserLoginEntity): Promise<UserEntity | null> => {
     try {
+        
         console.log(data);
         const user : UserEntity | null = await User.findOne({email: data.email});
         console.log("new repo user signed:",user);

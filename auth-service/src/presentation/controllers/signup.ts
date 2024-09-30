@@ -10,6 +10,7 @@ export const signupController = (dependencies: IDependencies) => {
 
     return async (req:Request, res:Response, next: NextFunction) : Promise<void> => {
         try {
+            
             console.log(req.body)
             const credentials = req.body;
             
