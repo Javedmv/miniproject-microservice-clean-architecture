@@ -15,8 +15,6 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     const errorResponse = {
         errors: [{ message: err?.message || "something went wrong" }]
     };
-    
-    // Using 'return' with a type assertion to suppress the error
     return (res.status(500).json(errorResponse) as unknown) as void;
 });
 
