@@ -11,6 +11,7 @@ export const addUserController = (dependencies: IDependencies) => {
   }
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
+      console.log(req.body);
       const userData: User = req.body;
       console.log(
         "🚀 ~ file: UserController.ts:11 ~ returnasync ~ userData:",
