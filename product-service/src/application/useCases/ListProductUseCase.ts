@@ -7,7 +7,8 @@ export const listProductUseCase = (dependencies: IDependencies) => {
             try {
                 return await listProduct(token)
             } catch (error: any) {
-                throw new Error(error?.message)
+                console.error("Detailed error:", error);
+                throw new Error(`Failed to list products: ${error?.message || 'Unknown error'}`)
             }
         }
     }
