@@ -13,7 +13,7 @@ export const listProductsController = (dependencies: IDependencies) => {
                 throw new Error("Authentication failed due to token undefined")
             }
 
-            const  products: Product | null = await listProductUseCase(dependencies).execute(token);
+            const  products: Product[] | null = await listProductUseCase(dependencies).execute(token);
 
             if(!products){
                 throw new Error("products not found")

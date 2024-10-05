@@ -18,7 +18,7 @@ export const listProduct = async (token: string): Promise<Product[] | null> => {
             throw new Error("Unauthorized access: User role does not have permission to list products");
         }
         const products : Product[] = await product.find();
-        return products;
+        return products.length > 0 ? products : null;
 
     } catch (error: any) {
         console.error("Failed to list products:", error);
