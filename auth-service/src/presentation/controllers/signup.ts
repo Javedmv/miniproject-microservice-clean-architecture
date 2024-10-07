@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { IDependencies } from "../../application/interfaces/IDependencies";
 import { hashPassword } from "../../utils/bcrypt/hashPassword";
 import generateToken from "../../utils/jwt/generateToken";
+import { userCreatedProducer } from "../../infrastructure/kafka/producers/userCreatedProducers";
 
 export const signupController = (dependencies: IDependencies) => {
     const {
@@ -80,7 +81,7 @@ export const signupController = (dependencies: IDependencies) => {
                     isAdmin: user.isAdmin
                 }
                 if(addedUser){
-                    // create kafka functianality here
+                    userCreatedProducer(addedUser);
                 }
             }else{
                 res.status(404).json({success: false, message: "User not found"})
